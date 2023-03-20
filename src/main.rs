@@ -9,12 +9,6 @@ fn main() {
         return;
     }
 
-    if true {
-
-    } else {
-
-    }
-    
     let file_path: &str = &args[1];
     let max_line_len = get_lines(file_path)
                         .map(|x| x.unwrap().len())
@@ -26,10 +20,12 @@ fn main() {
         std::process::exit(0);
     }
 
-    let mut line_iter = get_lines(file_path).map(|x| x.unwrap()).into_iter();
+    let mut line_iter = get_lines(file_path)
+                            .map(|x| x.unwrap())
+                            .into_iter();
 
     let mut prev_line: String = match line_iter.next() {
-        Some(l) => format_line_end(l, max_line_len),
+        Some(line) => format_line_end(line, max_line_len),
         None => return
     };
 

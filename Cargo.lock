@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "cursed-formater"
+name = "cursfmt"
 version = "0.1.0"
